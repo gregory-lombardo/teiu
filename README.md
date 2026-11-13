@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24202581.svg)](https://doi.org/10.5281/zenodo.24202581)
+
 # TEIU — Theory of Universal Electro-Intelligence
 
 **Auteur :** Gregory Lombardo  
