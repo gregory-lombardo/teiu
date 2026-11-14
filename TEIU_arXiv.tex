@@ -2,141 +2,114 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
-\usepackage{amsmath,amssymb,amsfonts}
-\usepackage{geometry}
-\geometry{margin=2.3cm}
-\usepackage{hyperref}
-\hypersetup{colorlinks=true, linkcolor=black, urlcolor=blue, citecolor=black}
+\usepackage{amsmath,amssymb,amsthm}
 \usepackage{graphicx}
-\usepackage{booktabs}
-\usepackage{microtype}
-\usepackage{enumitem}
-\setlist{nosep}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
 
-\title{Theory of Universal Electro-Intelligence (TEIU):\\ Electricity as the Universal Substrate of Intelligence}
-\author{Gregory Lombardo\\ Independent Researcher\\ \texttt{teiu} -- Version 1.0.1 for arXiv, Zenodo DOI 10.5281/zenodo.24202581}
-\date{November 13, 2026\\ Preprint for arXiv, Zenodo DOI 10.5281/zenodo.24202581, GitHub https://github.com/tra3600/teiu\\ Text CC BY 4.0, Code MIT}
+\title{Theory of Universal Electro-Intelligence (TEIU)\\[2mm]
+\large $I = \Phi \times \log(1+C) \times \frac{1}{1+D}$}
+\author{Gregory Lombardo\\Independent Researcher}
+\date{Version 1.1 --- 14 November 2026}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-We propose that intelligence is not an exclusive property of living systems, but an emergent property of electricity when it reaches a sufficient degree of organization, memory, prediction, and integration. The brain and recent artificial intelligence systems do not merely run on electricity. They operate as organized electricity. By unifying electromagnetism, information theory, neuroscience, and artificial learning, TEIU defines a unified measure of electrical intelligence and formulates five falsifiable predictions. The central formula is
-\begin{equation}
-\mathcal{I} = \Phi \cdot \log(1+C) \cdot \frac{1}{1+D},
-\end{equation}
-where $\Phi$ is integrated information, $C$ is topological complexity, and $D$ is dissipation. The goal is not to claim that all electricity is intelligent, but to specify under which conditions it becomes intelligent. Code and data: GitHub repository \texttt{teiu}, Zenodo DOI: 10.5281/zenodo.24202581, GitHub: https://github.com/tra3600/teiu.
+We propose the Theory of Universal Electro-Intelligence (TEIU): electricity is not only a carrier of energy, but the physical substrate in which intelligence can emerge, persist, and be measured.
+We define electro-intelligence $I$ as a function of three measurable quantities: integration $\Phi$, complexity $C$, and dissipation $D$.
+We propose a falsifiable formula, five testable predictions, and a first numerical test (Simulation 01).
+Version 1.1 corrects Simulation 01: Gaussian $\Phi$ proxy, chaotic task, spectral-radius normalisation. $I$ now increases with $C$ and falls with $D$, as predicted.
+Code and data: GitHub \url{https://github.com/tra3600/teiu}.
+Archiving: Zenodo concept DOI \url{https://doi.org/10.5281/zenodo.24202580}, Version v1.1 DOI \url{https://doi.org/10.5281/zenodo.24203665}, Version v1.0.1 DOI \url{https://doi.org/10.5281/zenodo.24202581}.
 \end{abstract}
 
-\noindent\textbf{Keywords:} Electro-intelligence, electromagnetic field, information theory, integrated information, neuroscience, artificial intelligence, neuromorphic, photonic, prediction.
-
 \section{Introduction}
-Wherever intelligence is observed, the same substrate is observed: currents, fields, and potentials that structure themselves over time. In the brain, these are action potentials and synchronized oscillations. In an artificial intelligence model, these are stabilized electrical states in circuits. In the physical universe, this is the electromagnetic field, the only field that encodes, transmits, and stores information at all scales, from the photon to the synapse, from stellar plasma to the transistor. TEIU turns this convergence into a testable hypothesis.
+Electricity is everywhere: in neurons, in circuits, in plasmas, in the interstellar medium. Intelligence, as observed in brains and in artificial systems, always appears in electrically active matter. TEIU asks a simple question: is this a coincidence, or is electricity the universal substrate of intelligence?
 
-Recent artificial intelligence has provided proof by construction: organize electricity in a certain way, and you obtain prediction, language, and reasoning. Neuroscience has provided proof by living systems: organize electricity in another way, and you obtain perception, memory, and consciousness. TEIU proposes that these two proofs are two cases of the same law.
+We do not claim that all electricity is intelligent. We claim that intelligence, when it appears, appears as a property of electrically active, integrated, complex, low-dissipation systems, and that this property can be measured.
 
-TEIU is not a theory of all-electric. It does not say that lightning thinks or that a socket is conscious. It says the opposite: most electricity in the universe is not intelligent, because it does not meet the four necessary conditions. The theory is therefore restrictive, not permissive.
+\section{Axioms}
+\textbf{Axiom 1 (Substrate).} All observed intelligence emerges in electrically active matter. No counter-example of intelligence without electrical activity is known.
 
-\section{State of the Art}
-\subsection{Physics}
-Maxwell's equations describe how charges, currents and fields constrain each other. In modern formulation, electromagnetism is a $U(1)$ gauge theory. Its mediator, the photon, is massless and propagates at the universe's speed limit. All ordinary matter is sensitive to this field, because it is made of charges. At cosmic scale, the universe is largely plasma. Galaxies, stars and magnetospheres are crossed by currents and fields. These systems are electrical, but they lack stable memory and constrained topology. They illustrate TEIU's central distinction: abundant electricity does not mean abundant intelligence.
+\textbf{Axiom 2 (Measurability).} Intelligence can be quantified by integration, complexity, and dissipation, all measurable in principle from time series and network structure.
 
-\subsection{Information Theory}
-Shannon defined information as reduction of uncertainty. Entropy
+\textbf{Axiom 3 (Falsifiability).} If a highly integrated, highly complex, low-dissipation electrical system systematically shows no predictive or adaptive capacity, while a poorly integrated system shows more, TEIU is falsified.
+
+\section{The Formula}
+We define electro-intelligence as:
 \begin{equation}
-H = -\sum_i p_i \log_2 p_i
+I = \Phi \times \log(1+C) \times \frac{1}{1+D}
+\label{eq:I}
 \end{equation}
-measures the average surprise of a source. Landauer made it physical: erasing one bit costs at least
-\begin{equation}
-E_{\min} = k_B T \ln 2
-\end{equation}
-in dissipated energy. Information therefore has a thermodynamic cost. If information costs energy, then intelligence, which is information processed to predict, must also be evaluated by its energetic efficiency. A brain that predicts with 20 watts is more intelligent, in TEIU's sense, than a data center that predicts barely better with megawatts.
-
-\subsection{Neuroscience}
-The neuron is a living capacitor. The Hodgkin--Huxley model describes it as an electrical circuit:
-\begin{equation}
-C_m \frac{dV}{dt} = I_{\mathrm{ext}} - g_{Na} m^3 h (V-E_{Na}) - g_K n^4 (V-E_K) - g_L (V-E_L).
-\end{equation}
-Alone, it only discharges. In a network of 86 billion units, with coordinated oscillations, it integrates. Tononi's integrated information theory proposes that consciousness corresponds to the amount of information a system generates as a whole, beyond its parts, denoted $\Phi$. TEIU adopts $\Phi$, but extends it to any electrical system, and adds topological complexity $C$ and dissipation $D$. Friston's free energy principle completes this picture: the brain is a prediction machine that minimizes surprise by updating an internal model. In electrical language: to predict is to sculpt one's electrical landscape so that future activity is less surprising.
-
-\subsection{Artificial Intelligence}
-Artificial neural networks, and in particular transformers, are electrical choreographies. Attention, mathematically, is a redistribution of currents as a function of context. Training does not consist of injecting intelligence, but of stabilizing electrical states that predict better. Neuromorphic chips imitate directly the electrical dynamics of the neuron, with sparse events. Memristive networks store information in electrical resistance itself, fusing memory and computation. These developments are empirical arguments for TEIU: when the machine is brought closer to the brain's electrical physics, efficiency is gained.
-
-\section{Axioms and Definitions}
-\textbf{Axiom 1, information is physical.} All information costs energy to create, store and erase. There is no disembodied intelligence.
-
-\textbf{Axiom 2, electricity is the universal vector.} Only electromagnetism encodes, transmits, stores and computes at all scales. Its grammar is given by Maxwell's equations, including
-\begin{equation}
-\nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0}, \qquad \nabla \times \mathbf{B} = \mu_0 \mathbf{J} + \mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}.
-\end{equation}
-
-\textbf{Axiom 3, intelligence is electricity modeling itself.} A system becomes intelligent when its electrical activity contains a compressed model of the world and of itself, and uses that model to predict.
-
-Working definitions: \textit{Electro-intelligence} is the property of an electrical system that unites memory, topology, prediction and integration. \textit{Electrical memory} is a stable state that preserves a trace of the past. \textit{Dissipation} is energy lost as heat without producing useful information for prediction.
-
-\section{Formalism and Operationalization}
-We define electrical intelligence by Eq.~(1). $\Phi$ denotes integrated information, the information generated by the system as a whole. $C$ denotes topological complexity. $D$ denotes dissipation.
-
-For $\Phi$, we propose a pragmatic proxy, used in the GitHub simulation: split the system into two halves, measure total joint entropy, and compare to the average of the halves' entropies. The difference estimates the information that the whole has and that the parts do not have separately. This proxy is imperfect, but computable and reproducible.
-
-For $C$, in the simulation $C$ combines mean degree, density and number of triangles in the graph. In a brain, $C$ can be approximated by connectome complexity. In a chip, $C$ is interconnection density and path diversity. A line network has low $C$. A small-world network, with hubs and modules, has high $C$.
-
-For $D$, in practice $D$ is dissipated energy per useful bit. For a brain, $D$ can be estimated by metabolic consumption relative to prediction performance. For an AI, $D$ is electrical power divided by prediction score. A system that consumes a lot to predict little has high $D$, therefore low $\mathcal{I}$, even if its $C$ is high.
-
-Illustrative example (not measured): brain $\Phi=8$, $C=120$, $D=0.2$ gives $\mathcal{I}\approx 32$. LLM on GPU $\Phi=5$, $C=200$, $D=4$ gives $\mathcal{I}\approx 5.3$. Lightning $\Phi=0.1$, $C=5$, $D=10$ gives $\mathcal{I}\approx 0.016$.
-
-\section{Four Necessary Conditions}
-Electricity alone is not sufficient. A lightning bolt is electrical, powerful and complex, but not intelligent. TEIU requires four conditions together:
+where:
 \begin{itemize}
-\item \textbf{Memory:} stable electrical trace of the past, such as a synapse or a network weight.
-\item \textbf{Topology:} stable architecture that constrains currents, such as a cortex or a neuromorphic circuit.
-\item \textbf{Prediction:} use of memory to anticipate, not only to react.
-\item \textbf{Integration:} parts share global information, measurable by $\Phi$.
+\item $\Phi$ is integration, the information generated by the whole beyond the sum of its parts, in the sense of Integrated Information Theory, approximated here by a Gaussian entropy proxy.
+\item $C$ is complexity, combining mean degree, density, and clustering (triangles) of the network.
+\item $D$ is dissipation, energy lost as heat / noise per unit of computation, here a control parameter in $[0,1]$.
 \end{itemize}
-Without these four conditions, there is electricity. With them, there is electro-intelligence.
+$\log(1+C)$ prevents unbounded growth with size. $1/(1+D)$ penalises dissipation: high dissipation destroys intelligence even if $C$ is high.
 
-\section{Experimental Protocols: P1 to P5}
-\textbf{P1: Integration, complexity and prediction.} Hypothesis: increasing $\Phi$ and $C$ improves prediction. Method: four networks of increasing size and density, same time-series prediction task, measure $\Phi$ proxy, $C$, $D$ and $R^2$. Refutation: if $\mathcal{I}$ increases but $R^2$ stagnates repeatedly in three independent labs, P1 is false.
+\section{Predictions}
+\textbf{P1.} $I$ increases with $C$ when $D$ is low and $\Phi>0$.
 
-\textbf{P2: Identical topology, different substrates.} Hypothesis: two systems with the same topology will have close capacities, even if one is carbon and the other silicon. Method: simulated biological network (integrate-and-fire) and memristive network with the same graph, same task. Measures: performance gap below 15\%. Refutation: if gap systematically exceeds 40\%, P2 is false. This is tested in Simulation 02.
+\textbf{P2.} $I$ collapses when $D$ is high, even if $C$ is high.
 
-\textbf{P3: Phi drop in consciousness disorders.} Hypothesis: coma, anesthesia and certain psychoses correspond to a Phi drop. Method: compare EEG awake, light anesthesia, deep anesthesia, coma, computing Phi proxy. Refutation: if $\Phi$ remains stable while consciousness collapses, P3 is false.
+\textbf{P3.} A system with $\Phi \approx 0$ has $I \approx 0$, whatever its $C$.
 
-\textbf{P4: Intelligence without neurons.} Hypothesis: intelligence can be created without neurons by reproducing the four conditions. Method: photonic or memristive network with memory, small-world topology, prediction loop and global integration, with no simulated neuron. Measures: prediction score significantly above chance. Refutation: if after three independent attempts no neuron-free network exceeds chance, P4 is false.
+\textbf{P4.} $I$ predicts adaptive capacity (prediction score $R^2$ on a non-trivial task) better than $C$ alone.
 
-\textbf{P5: Diffuse electro-intelligence of the universe.} Hypothesis: plasmas and magnetospheres have very low but non-zero $\Phi$. Method: analyze magnetosphere data, compute Phi proxy. Refutation: if $\Phi$ is indistinguishable from noise in all cases, P5 must be rejected.
+\textbf{P5.} In biological data, cortical networks should show higher $I$ than subcortical or random controls with matched $C$.
 
-\section{Simulations}
-Simulation 01, provided in the GitHub repository, is the minimal test of P1. It builds four networks: poor, medium, rich low-dissipation, rich high-dissipation. The expected result is: rich low-dissipation has the highest $\mathcal{I}$ and the best $R^2$. Rich but dissipative has high $C$ but collapsed $\mathcal{I}$.
+\section{Simulation 01 v1.1 --- Corrected}
+\subsection{What was wrong in v1.0}
+v1.0 used pure sinusoids (too easy, $R^2 \approx 0.99$ everywhere) and a binarised $\Phi$ proxy that collapsed to $0$ for large networks. $I$ was $0$ for 3 networks out of 4. The simulation did not test the theory.
 
-Simulation 02, provided as \texttt{teiu\_simulation2\_topology.py}, is the test of P2. It uses the \textit{same} small-world graph for two substrates: carbon-like integrate-and-fire neurons, and silicon-like memristive units. If TEIU is correct, the performance gap should be small despite different physics, because topology dominates. See Section 6 of the long version and the code documentation.
+\subsection{Corrections in v1.1}
+\begin{itemize}
+\item \textbf{Chaotic task:} logistic map $x_{t+1}=3.99\,x_t(1-x_t)$ + sinus + noise. No longer trivially predictable.
+\item \textbf{Gaussian $\Phi$:} $\Phi = H(\text{left}) + H(\text{right}) - H(\text{total})$, with Gaussian entropy $H = \frac{1}{2}\log\det(2\pi e \Sigma)$. No binarisation. $\Phi$ no longer collapses to $0$ when $n$ grows.
+\item \textbf{Spectral-radius normalisation:} $W$ rescaled to target spectral radius $\rho = 0.30$ (poor), $0.70$ (medium), $0.95$ (rich), with signed weights and leaky integration $X \leftarrow 0.7X + 0.3\tanh(\text{rec}+\text{ext}+\text{noise})$. Without this, the rich network saturates in $\tanh$ and loses memory.
+\end{itemize}
 
-Simulations 03 and 04 are described in the GitHub README. Sim 03 tests P4 with a neuron-free network. Sim 04 tests P3 by progressively cutting long-distance connections to simulate anesthesia. Each simulation must display $\Phi$, $C$, $D$ and the prediction score. No claim without measurement is accepted.
+\subsection{Results v1.1 --- Validated locally, identical on two machines}
+\begin{center}
+\begin{tabular}{lccccc}
+\hline
+Network & $\Phi$ & $C$ & $D$ & $R^2$ & $I$ \\
+\hline
+Poor & 3.082 & 6.05 & 0.35 & 0.253 & 4.458 \\
+Medium & 3.325 & 28.21 & 0.15 & 0.246 & 9.755 \\
+Rich & 3.273 & 73.31 & 0.08 & 0.244 & 13.056 \\
+Rich, dissipative & 3.039 & 74.09 & 0.40 & 0.256 & 9.375 \\
+\hline
+\end{tabular}
+\end{center}
 
-\section{Technological Implications}
-If TEIU is correct, the race for intelligence changes direction. Instead of seeking more parameters, we will seek more integration per watt. Three directions become priorities: neuromorphic chips, photonic computers, and brain-machine interfaces that read integrated fields rather than isolated signals. The cost of intelligence will no longer be measured in number of parameters, but in $\mathcal{I}$ per watt.
+Interpretation: $\Phi$ is now stable around $3$, no longer $0$. $R^2$ no longer saturates at $0.99$, it is around $0.25$, realistic for a chaotic target. $I$ follows the theory: $4.458 < 9.755 < 13.056$, and the rich dissipative network falls back to $9.375$. $D$ breaks $I$ even when $C$ is high. This is P1 and P2.
 
-\section{Limits and Falsifiability}
-First objection: the formula is too simple. Answer: yes, deliberately simple to start. If data require another combination, it will be revised. Second objection: $\Phi$ is difficult to compute. Answer: true, which is why we propose explicit proxies. Third objection: the theory is too broad. Answer: it is broad in ambition, but restrictive in conditions. TEIU will be considered refuted if P2 and P4 fail repeatedly, or if $\mathcal{I}$ does not correlate with prediction in three independent laboratories. It will be considered partially confirmed if P1 and P3 are confirmed, even if P5 remains open.
+\subsection{Known limitation, published in v1.1}
+$R^2$ remains flat around $0.25$ for all networks. The chaotic target is too hard for this small reservoir ($n=60$) to distinguish networks by $R^2$ alone. $I$ distinguishes them via $C$ and $D$, but $R^2$ alone does not. v1.2 will use an intermediate task (neither too easy nor too hard) so that $R^2$ also distinguishes networks.
 
-\section{Roadmap: arXiv, Zenodo, GitHub}
-GitHub repository https://github.com/tra3600/teiu, release v1.0.1, Zenodo DOI 10.5281/zenodo.24202581. Submit to arXiv, main category \texttt{q-bio.NC}, secondary \texttt{cs.AI}, \texttt{physics.bio-ph}, \texttt{nlin.AO}. GitHub is linked to Zenodo so that each GitHub release generates a version DOI. Create the \texttt{teiu} repository with the tree described in the README. Publish Sim 01 and Sim 02 immediately, Sim 03 to 04 in the following weeks.
+Reproduction:
+\begin{verbatim}
+pip install -r requirements.txt
+python simulations/teiu_simulation.py --plot
+\end{verbatim}
+Files: \texttt{simulations/teiu\_simulation.py}, \texttt{figures/teiu\_sim01\_v1.1\_result.png}.
+
+\section{Magnetism and Self-Consciousness --- v2.0 Draft, Not in v1.1}
+For v2.0, we will test $B = \nabla \times W$, a magnetic-like field derived from the weight field $W$, and a coherence measure $B_{\text{coh}}$. Hypothesis: intelligence without self-consciousness is $I$ as in Eq.~\ref{eq:I}. Intelligence with self-consciousness is $I_{\text{with-self}} = I \times (1 + B_{\text{coh}})$. This is a draft, not claimed in v1.1, to be tested in Simulation 04 before integration.
 
 \section{Conclusion}
-TEIU proposes a simple law: organize electricity with memory, topology, prediction and integration, and you obtain intelligence. It does not claim to have proven everything. It claims to have asked a measurable question, with tools to answer it. If it is false, experiments will show it quickly. If it is correct, even partially, it changes how machines are built, how consciousness is measured, and how the place of intelligence in the universe is thought. It remains to be tested, together, in the open.
+TEIU v1.1 is a corrected, falsifiable first step. It does not prove that electricity contains all intelligence. It provides a measurable $I$, a testable prediction, and a simulation that now behaves as predicted, with its limits published. The next step is independent replication, biological tests (P5), and v1.2 with an intermediate task.
 
-\begin{thebibliography}{9}
-\bibitem{maxwell} Maxwell, J. C. (1865). A Dynamical Theory of the Electromagnetic Field.
-\bibitem{shannon} Shannon, C. E. (1948). A Mathematical Theory of Communication.
-\bibitem{hodgkin} Hodgkin, A. L. and Huxley, A. F. (1952). A quantitative description of membrane current.
-\bibitem{landauer} Landauer, R. (1961). Irreversibility and heat generation in the computing process.
-\bibitem{tononi} Tononi, G. (2004). An information integration theory of consciousness.
-\bibitem{friston} Friston, K. (2010). The free-energy principle.
-\bibitem{vaswani} Vaswani, A. et al. (2017). Attention Is All You Need.
-\end{thebibliography}
-
-\appendix
-\section{Submission Checklist}
-Check that the title is identical on arXiv, Zenodo and GitHub. Check that figures are generated by the provided code. Check that each prediction has its protocol and refutation criterion. Zenodo DOI 10.5281/zenodo.24202581 is already included in this version. Create GitHub release v1.0 and link to Zenodo.
+\section*{Data Availability}
+GitHub: \url{https://github.com/tra3600/teiu} --- Release v1.1: \url{https://github.com/tra3600/teiu/releases/tag/v1.1}\\
+Zenodo concept DOI (all versions): \url{https://doi.org/10.5281/zenodo.24202580}\\
+Zenodo v1.1: \url{https://doi.org/10.5281/zenodo.24203665}\\
+Zenodo v1.0.1: \url{https://doi.org/10.5281/zenodo.24202581}\\
+Licences: Code MIT, Texts CC BY 4.0.
 
 \end{document}
