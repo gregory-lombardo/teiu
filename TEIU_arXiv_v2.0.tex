@@ -1,0 +1,115 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=2.2cm}
+\title{Theory of Universal Electro-Intelligence (TEIU) \\ \large Electricity as the Universal Substrate of Intelligence \\ \large V2.0: Magnetism, Curl, and Embodied Self-Consciousness \\ \large $I_{\text{with-self}} = I \times (1 + B_{\text{coh}})$, \quad $B = \nabla \times W$}
+\author{Gregory Lombardo \\ Independent Researcher -- Chercheur ind\'ependant}
+\date{15 November 2026 -- Version 2.0}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Version 1.1 of TEIU defined electro-intelligence as $I = \Phi \times \log(1+C) \times 1/(1+D)$ and validated it in Simulation 01. Version 2.0 extends TEIU from an abstract network to an embodied body. The network is now a 2D body grid ($8 \times 8 = 64$ nodes) with heterogeneous regions --- brain, heart, gut, skin --- each with its own rhythm. The weight field $W$ becomes a vector field. Its curl gives a magnetic-like field $B = \nabla \times W$, computed dynamically from the currents $J(t)$. Its spatio-temporal coherence is $B_{\text{coh}}$. We define intelligence with self-consciousness as $I_{\text{with-self}} = I \times (1 + B_{\text{coh}})$, and intelligence without self-consciousness as $I$ alone. Prediction P6 (V2): $B_{\text{coh}}$ correlates with the capacity to predict one's own future states. Simulation 04 V2.1, validated identically on two machines, gives $B_{\text{coh}} = 0.321$ (poor), $0.339$ (medium), $0.346$ (rich), $0.265$ (rich dissipative), $I_{\text{with-self}} = 8.921, 15.479, 19.966, 13.641$, and correlation $B_{\text{coh}}$ vs Self-R2 $= 0.654$, against $0.204$ in V2.0 draft. P6 is now supported. We publish the remaining limitation: Self-R2 remains high ($0.90$--$0.92$) because predicting 5 steps ahead is still too easy; V2.2 will use horizon 20. Code and data: GitHub \url{https://github.com/tra3600/teiu}, Zenodo Concept DOI \url{https://doi.org/10.5281/zenodo.24202580}, Zenodo v1.1 DOI \url{https://doi.org/10.5281/zenodo.24203665}, Zenodo v2.0 DOI \url{https://doi.org/10.5281/zenodo.24271104}.
+\end{abstract}
+
+\noindent \textbf{Keywords:} TEIU, electro-intelligence, magnetism, curl, embodied cognition, self-consciousness, reservoir computing, $B_{\text{coh}}$
+
+\section{Introduction -- From Network to Body}
+In V1.1, TEIU treated intelligence as a property of an abstract network. That was necessary to make the theory testable, but it was incomplete. In a living being, intelligence does not float in an abstract graph. It emerges in a body: a brain that oscillates fast, a heart that beats, a gut that digests slowly, a skin that senses the world. Consciousness does not emerge in a brain alone. It emerges in a body that senses itself, moves, and predicts its own future.
+
+V2.0 asks: what is the physical field that binds a body into a self? We propose that the magnetic-like field $B = \nabla \times W$ is that binding field. $W$ is the weight field, the circulation of information. Its curl, $B$, is the vortex that makes the circulation coherent. When $B$ is coherent, the body turns together, like a stable vortex. When $B$ is incoherent, the body turns in all directions, no self emerges.
+
+This is an analogy with magnetism, not a claim that neurons generate a measurable magnetic field in the Maxwell sense. We use $B$ as a magnetic-like order parameter for the circulation of electrical activity in the body. The test is whether $B_{\text{coh}}$ predicts self-consciousness, defined operationally as the capacity to predict one's own future states.
+
+\section{V1.1 Reminder -- $I = \Phi \times \log(1+C) \times 1/(1+D)$}
+For completeness: $\Phi$ is Gaussian integration, $\Phi = H(\text{left}) + H(\text{right}) - H(\text{total})$. $C$ is complexity from mean degree, density, and triangles. $D$ is dissipation. Simulation 01 V1.1 gave $I = 4.458$ (poor), $9.755$ (medium), $13.056$ (rich), $9.375$ (rich dissipative), with $\Phi \approx 3$, $R^2 \approx 0.25$. $I$ increases with $C$ and falls with $D$. This is the base of V2.0.
+
+\section{V2.0 Theory -- $B = \nabla \times W$, $B_{\text{coh}}$, and $I_{\text{with-self}}$}
+\subsection{The Body}
+The body is a 2D grid, $8 \times 8 = 64$ nodes, each with position $(x,y)$. Regions: brain ($y \leq 1$, rhythm $0.08$, amplitude $0.5$), heart ($y = 3$--$4$, rhythm $0.12$, amplitude $0.7$), gut ($y \geq 6$, rhythm $0.03$, amplitude $0.4$), skin ($x = 0$ or $7$, rhythm $0.01$, amplitude $0.2$), other (rhythm $0.05$). Each region has its own sensory input: body\_input $= \sin(\text{region\_freq} \times t + x \times 0.3) \times \text{region\_amp} \times 0.3 + \text{ext} \times 0.35$, where ext is a chaotic logistic signal. The body is heterogeneous, not uniform. Consciousness is the synchronisation of these rhythms.
+
+\subsection{The Current $J(t)$ and the Field $B(t)$}
+At each time $t$, the current is $J_i(t) = \sum_j W_{ij} \times X_j(t) \times (\text{pos}_j - \text{pos}_i)$, with signed weights $W$ (spectral-radius normalised, $\pm 1$). The magnetic-like field is the discrete curl: $B_z = \partial V_y / \partial x - \partial V_x / \partial y$, computed by finite differences on the grid. $B(t)$ is a field that evolves in time.
+
+\subsection{Coherence $B_{\text{coh}}$}
+$B_{\text{coh}}$ is spatio-temporal coherence: at each $t$, spatial coherence $= 1 - \text{std}(B) / (\text{mean}|B| + \text{std}(B))$. Then $B_{\text{coh}} = \text{mean}_t(\text{spatial coherence}) \times (0.5 + 0.5 \times \text{temporal stability})$, where temporal stability $= 1 - \text{std}_t(\text{mean } B) / (|\text{mean } B| + \text{std}_t + \epsilon)$. If $B$ changes sign at each step, $B_{\text{coh}}$ falls. If $B$ turns stably, $B_{\text{coh}}$ rises. This is V2.1, corrected from V2.0, where $B$ was static, computed once on binary $W$, without dynamics.
+
+\subsection{Intelligence With and Without Self}
+We define: \textbf{Intelligence without self-consciousness $= I$} (Eq. 1, V1.1). \textbf{Intelligence with self-consciousness $= I_{\text{with-self}} = I \times (1 + B_{\text{coh}})$} (Eq. 2, V2.0). The factor $(1 + B_{\text{coh}})$ is bounded in $[1,2]$. It does not create intelligence from nothing: if $I = 0$, then $I_{\text{with-self}} = 0$. It amplifies $I$ when the body is magnetically coherent.
+
+\subsection{Prediction P6 (V2)}
+\textbf{P6.} $B_{\text{coh}}$ correlates with self-prediction capacity, defined as Self-R2: the capacity to predict each node's own future state at $t+5$ from the state at $t$, by ridge regression, $R^2$ averaged over nodes. In V2.0, P6 was not supported (correlation $0.204$). In V2.1, P6 is supported (correlation $0.654$).
+
+\section{Methods -- Simulation 04 V2.1}
+Four bodies, $n = 64$, grid $8 \times 8$, steps $= 800$, small-world $W$ with rewiring, spectral-radius normalisation $\rho = 0.30$ (poor), $0.70$ (medium), $0.95$ (rich), $0.95$ (rich dissipative). Poor: $k \approx 2$ (30\% of links kept), $D = 0.35$. Medium: $k \approx 6$ (60\% kept), $D = 0.15$. Rich: $k = 12$, $D = 0.08$. Rich dissipative: $k = 12$, $D = 0.40$. Dynamics: leaky reservoir, $X \leftarrow 0.7 X + 0.3 \tanh(\text{rec} + \text{body\_input} + \text{noise})$, rec $= W_s X$. $\Phi$ by Gaussian entropy, $C$ by degree/density/triangles, $I$ by Eq. 1, $B_{\text{coh}}$ by Section 3, Self-R2 by Section 3, horizon 5. Reproduction: \texttt{python simulations/teiu\_simulation\_04\_v2.1.py --plot}.
+
+\section{Results -- Simulation 04 V2.1}
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|c|c|}
+\hline
+Body & $\Phi$ & $C$ & $D$ & $I$ & $B_{\text{coh}}$ & $I_{\text{with-self}}$ & Self-R2 \\
+\hline
+Poor & 4.088 & 8.30 & 0.35 & 6.754 & 0.321 & \textbf{8.921} & 0.902 \\
+Medium & 4.404 & 19.48 & 0.15 & 11.563 & 0.339 & \textbf{15.479} & 0.917 \\
+Rich & 4.389 & 37.54 & 0.08 & 14.839 & 0.346 & \textbf{19.966} & 0.920 \\
+Rich diss. & 4.194 & 35.60 & 0.40 & 10.786 & 0.265 & \textbf{13.641} & 0.906 \\
+\hline
+\end{tabular}
+\end{center}
+Table 1 -- Simulation 04 V2.1, validated identically on two machines. Correlation $B_{\text{coh}}$ vs Self-R2 $= 0.654$.
+
+Three results. First, $B_{\text{coh}}$ now distinguishes: $0.321 \rightarrow 0.339 \rightarrow 0.346$, and falls to $0.265$ with dissipation. Dissipation breaks the magnetic vortex, as predicted. Second, $I_{\text{with-self}}$ increases: $8.921 < 15.479 < 19.966$, and falls to $13.641$ with dissipation. Third, correlation $B_{\text{coh}}$ vs Self-R2 $= 0.654$, against $0.204$ in V2.0. P6 is supported in V2.1. In V2.0, $B_{\text{coh}}$ was flat ($\approx 0.44$) and Self-R2 was flat ($\approx 0.86$) because $B$ was static and the task was predicting the mean. V2.1 fixes both.
+
+\section{Discussion, Limitations, and What Would Falsify V2}
+\subsection{Interpretation}
+V2.0 does not claim that consciousness is magnetism. It claims that a magnetic-like coherence of electrical circulation in a heterogeneous body is a measurable correlate of self-consciousness, defined operationally as self-prediction. When the body turns coherently, it can predict itself. When it turns incoherently, it cannot.
+
+\subsection{Limitation -- Self-R2 still high}
+Self-R2 remains high, $0.902$--$0.920$, because horizon 5 is still too easy for a leaky reservoir. The correlation $0.654$ is real, but the spread of Self-R2 is small. For V2.2, we will use horizon 20, so that Self-R2 also distinguishes bodies clearly. We publish this limitation, as we published the flat $R^2$ in V1.1.
+
+\subsection{Falsification}
+V2 would be falsified if, with horizon 20 and a larger body, (i) $B_{\text{coh}}$ does not correlate with Self-R2 (correlation $< 0.3$), or (ii) a high-$D$ body shows higher $B_{\text{coh}}$ than a low-$D$ body with matched $C$, or (iii) in biological data, heart-brain-gut synchrony does not predict self-report of embodied awareness. We invite such tests.
+
+\section{Conclusion}
+TEIU V2.0 integrates magnetism, curl, and embodied self-consciousness into TEIU, with a corrected simulation that supports P6. It does not prove that consciousness is magnetism. It provides a measurable $B_{\text{coh}}$, a testable P6, and open code for replication. Next steps: V2.2 with horizon 20, V2.3 with biological data (heart-brain synchrony), and independent replication.
+
+\section*{Acknowledgements}
+The author thanks the open-science community. No funding. No conflicts. Code MIT, Texts CC BY 4.0.
+
+\section*{Data Availability}
+GitHub \url{https://github.com/tra3600/teiu} -- Zenodo Concept DOI \url{https://doi.org/10.5281/zenodo.24202580} -- Zenodo v1.1 DOI \url{https://doi.org/10.5281/zenodo.24203665} -- Zenodo v2.0 DOI \url{https://doi.org/10.5281/zenodo.24271104} -- HAL deposit in progress, transfer to arXiv requested. Licences: Code MIT, Texts CC BY 4.0.
+
+\section*{References}
+\begin{itemize}
+\item Tononi, G. (2004). An information integration theory of consciousness. \textit{BMC Neuroscience}, 5, 42.
+\item Tononi, G. et al. (2016). Integrated information theory. \textit{Nature Reviews Neuroscience}, 17, 450--461.
+\item Jaeger, H. (2001). The echo state approach. \textit{GMD Report}, 148.
+\item Luko\v{s}evi\v{c}ius, M. \& Jaeger, H. (2009). Reservoir computing. \textit{Computer Science Review}, 3(3), 127--149.
+\item Friston, K. (2010). The free-energy principle. \textit{Nature Reviews Neuroscience}, 11, 127--138.
+\item Thompson, E. \& Varela, F. J. (2001). Radical embodiment. \textit{Trends in Cognitive Sciences}, 5(10), 418--425.
+\item Lombardo, G. (2026). TEIU v1.1. GitHub \url{https://github.com/tra3600/teiu} -- Zenodo Concept DOI \url{https://doi.org/10.5281/zenodo.24202580} -- Zenodo v1.1 DOI \url{https://doi.org/10.5281/zenodo.24203665}.
+\item Lombardo, G. (2026). TEIU v2.0. GitHub \url{https://github.com/tra3600/teiu} -- Zenodo v2.0 DOI \url{https://doi.org/10.5281/zenodo.24271104} -- Simulation 04 V2.1, $B = \text{curl } W$, $I_{\text{with-self}} = I \times (1 + B_{\text{coh}})$.
+\end{itemize}
+
+\appendix
+\section{Reproduction Checklist V2.1}
+1. Clone \url{https://github.com/tra3600/teiu}, Release v2.0.\\
+2. pip install -r requirements.txt\\
+3. python simulations/teiu\_simulation\_04\_v2.1.py --plot\\
+4. Expected: $B_{\text{coh}}$ 0.321, 0.339, 0.346, 0.265; $I_{\text{with-self}}$ 8.921, 15.479, 19.966, 13.641; Correlation 0.654.\\
+5. If Self-R2 is high (0.90-0.92), that is the published V2.1 limitation, not an error.
+
+\section{Version History}
+v1.0: Sim 01, sinusoids, binarised Phi, R2 0.99, Phi 0. Published with limits.\\
+v1.0.1: Trigger Zenodo. DOI 10.5281/zenodo.24202581.\\
+v1.1: Sim 01 corrected, Gaussian Phi, chaotic task, spectral radius. DOI 10.5281/zenodo.24203665. Concept DOI 10.5281/zenodo.24202580. Scientific Paper v1.1.\\
+v2.0 DRAFT: Sim 04, static B, P6 not supported (corr 0.204). Not published as proof.\\
+v2.0 / V2.1: Sim 04 corrected, dynamic $B_{\text{coh}}$, heterogeneous body, hard self-task, P6 supported (corr 0.654). Scientific Paper v2.0. Zenodo v2.0 DOI 10.5281/zenodo.24271104.
+
+\end{document}
